@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Ticket Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🎬 MYSHOW</div>
+
+      <div class="city-select">
+        <select id="cityDropdown">
+          <option value="delhi">Delhi</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="kolkata">Kolkata</option>
+          <option value="patna">Patna</option>
+        </select>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for movies...">
+        <button onclick="searchMovie()">Search</button>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" onclick="showLoginModal()">Login</a>
+        <a href="#" onclick="showSignUpModal()">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Slider Section -->
+  <section class="slider">
+    <div class="slide active">
+      <img src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1755764418676_21staugplaycarddesktophpc.jpg" alt="Movie 1">
+    </div>
+    <div class="slide">
+      <img src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1756384488141_missionimpossiblethefinalreckoningweb.jpg" alt="Movie 2">
+    </div>
+    <div class="slide">
+      <img src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1757070379197_webbanner.jpg" alt="Movie 3">
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Movies Section -->
+  <section class="movies">
+
+    <div class="movie-card"
+         data-name="Avengers: Endgame"
+         data-rating="4.8"
+         data-language="English"
+         data-duration="3h 2m"
+         data-genre="Action/Sci-Fi"
+         data-poster="image/avengers.avif"
+         data-about="After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance to the universe.">
+      <img src="image/avengers.avif" alt="Avengers">
+      <h3>Avengers: Endgame</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="KGF Chapter 2"
+         data-rating="4.5"
+         data-language="Kannada/Hindi"
+         data-duration="2h 48m"
+         data-genre="Action/Drama"
+         data-poster="image/kgf.avif"
+         data-about="Rocky takes on powerful enemies while uniting the oppressed in his fight for control of Kolar Gold Fields.">
+      <img src="image/kgf.avif" alt="KGF 2">
+      <h3>KGF Chapter 2</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="RRR"
+         data-rating="4.6"
+         data-language="Telugu/Hindi"
+         data-duration="3h 7m"
+         data-genre="Action/Drama"
+         data-poster="image/rrr.avif"
+         data-about="Two legendary revolutionaries journey away from home before they fight for their country in the 1920s.">
+      <img src="image/rrr.avif" alt="RRR">
+      <h3>RRR</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="WAR 2"
+         data-rating="4.2"
+         data-language="Hindi"
+         data-duration="2h 30m"
+         data-genre="Action/Thriller"
+         data-poster="image/war 2.avif"
+         data-about="War 2 is an action-packed thriller continuing the high-octane franchise.">
+      <img src="image/war 2.avif" alt="War 2">
+      <h3>War 2</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="param sundari"
+         data-rating="4.2"
+         data-language="Hindi"
+         data-duration="2h 16m"
+         data-genre="comedy/Drama/romantic"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny40LzEwICAzNy44SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00426409-qbddwxdccg-portrait.jpg"
+         data-about="North ka swag, South ki grace - two worlds collide and sparks fly.
+
+Dinesh Vijan presents Param Sundari, a love story directed by Tushar Jalota.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny40LzEwICAzNy44SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00426409-qbddwxdccg-portrait.jpg" alt="param sundari">
+      <h3>param sundari</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="The-conjuring-last-rites"
+         data-rating="4.2"
+         data-language="Hindi"
+         data-duration="2h 15m"
+         data-genre="Horrow/Thriller"
+         data-poster="image/The-conjuring-last-rites.avif"
+         data-about="Ed and Lorraine Warren face their most haunting and dangerous case yet, as they confront sinister entities that threaten to unravel everything they hold dear.">
+      <img src="image/The-conjuring-last-rites.avif" alt="The-conjuring-last-rites">
+      <h3>The-conjuring-last-rites</h3>
+    </div>
+ <div class="movie-card"
+         data-name="Mirai"
+         data-rating="4.1"
+         data-language="Hindi/Telgu"
+         data-duration="2h 49m"
+         data-genre="Action/Adventure/Thriller"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTQ4LjhLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00395402-ntvtxqedna-portrait.jpg"
+         data-about="A street-smart young man discovers he is the only answer and the shield to stop a powerful force from reaching the nine-sacred books of king Ashoka. Mirai is his journey of experiencing the power of Brahmand.
+Cast">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTQ4LjhLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00395402-ntvtxqedna-portrait.jpg" alt="Mirai">
+      <h3>Mirai</h3>
+    </div>
+ <div class="movie-card"
+         data-name="The Bengal Files"
+         data-rating="4.3"
+         data-language="Hindi"
+         data-duration="2h 30m"
+         data-genre="Historical/Thriller"
+         data-poster="https://cdn.district.in/movies-assets/images/cinema/The-bengal-files_Poster-06975e80-7b57-11f0-9b57-a9dda541a3eb.jpg"
+         data-about="Based on real incidents of communal violence, the story highlights events that significantly shaped India's path to independence and partition. Alongside this historical backdrop, the narrative follows a criminal investigator who, while working on a missing person case, uncovers a network of corruption.">
+      <img src="https://cdn.district.in/movies-assets/images/cinema/The-bengal-files_Poster-06975e80-7b57-11f0-9b57-a9dda541a3eb.jpg" alt="The Bengal Files">
+      <h3>The Bengal Files</h3>
+    </div>
+ <div class="movie-card"
+         data-name="Love in Vietnam"
+         data-rating="3.9"
+         data-language="Hindi"
+         data-duration="2h 12m"
+         data-genre="Drama/Romantic"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-NzAuNUsgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00399084-wthjsexwjm-portrait.jpg"
+         data-about="Love, Heartbreak and Everything in between.
+
+Get ready to witness the twist of passion! When destiny rewrites rules.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-NzAuNUsgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00399084-wthjsexwjm-portrait.jpg" alt="Love in Vietnam">
+      <h3>Love in Vietnam</h3>
+    </div>
+ <div class="movie-card"
+         data-name="Ek Chatur Naar"
+         data-rating="3.2"
+         data-language="Hindi"
+         data-duration="2h 14m"
+         data-genre="Comedy"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTUuMksgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00458129-sqkrudqgxk-portrait.jpg"
+         data-about="Ek Chatur Naar is a sharp, dark comedy about a seemingly charming woman who is naive yet witty, with the skill and ambition to outwit anyone in her path. The film blends humor, suspense, and unexpected twists in a unique small-town Indian setting.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-MTUuMksgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00458129-sqkrudqgxk-portrait.jpg" alt="Ek Chatur Naar">
+      <h3>Ek Chatur Naar</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Mahavatar Narsimha"
+         data-rating="4.9"
+         data-language="Hindi"
+         data-duration="2h 11m"
+         data-genre="Action/Animation/Drama"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS42LzEwICAzMTEuNUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00429289-clrszdfbby-portrait.jpg"
+         data-about="When Faith is Challenged, He Appears.
+In a World torn apart by Darkness and Chaos...
+Witness the Appearance of the most Ferocious, The Half-Man, Half-Lion Avatar-Lord Vishnu`s Most Powerful Incarnation.
+
+Unleash the Fury! Witness the Roar of Mahavatar Narsimha.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS42LzEwICAzMTEuNUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00429289-clrszdfbby-portrait.jpg" alt="Mahavatar Narsimha">
+      <h3>Mahavatar Narsimha</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Madharaasi"
+         data-rating="4.1"
+         data-language="Hindi/Tamil"
+         data-duration="2h 48m"
+         data-genre="Action/Thriller"
+         data-poster="https://assets-in.bmscdn.com/iedb/movies/images/website/poster/large/madharasi-et00434543-1739948960.jpg"
+         data-about="Madharasi is a multilingual movie starring Sivakarthikeyan, Rukmini Vasanth, Vidyut Jammwal, Biju Menon and Shabeer Kallarakkal in prominent roles. It is written and directed by A.R. Murugadoss.">
+      <img src="https://assets-in.bmscdn.com/iedb/movies/images/website/poster/large/madharasi-et00434543-1739948960.jpg" alt="Madharaasi">
+      <h3>Madharaasi</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Demon Slayer - Kimetsu no Yaiba"
+         data-rating="4.6"
+         data-language="Hindi/English"
+         data-duration="2h 35m"
+         data-genre="Action/Thriller"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-Nzg0LjNLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00436673-vehszbkjpq-portrait.jpg"
+         data-about="The Demon Slayer Corps plunge into Infinity Castle to defeat Muzan. However, the remaining Hashiras and the Demon Slayers who survived Tanjiro's Final Selection are pitted against the remaining members of the Twelve Kizuki first.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-Nzg0LjNLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00436673-vehszbkjpq-portrait.jpg" alt="Demon Slayer - Kimetsu no Yaiba">
+      <h3>Demon Slayer - Kimetsu no Yaiba </h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Vash Leval 2"
+         data-rating="4.3"
+         data-language="Hindi/Gujarati"
+         data-duration="1h 43m"
+         data-genre="Action/Thriller"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4zLzEwICA4LjVLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00430860-dqffzcxnxr-portrait.jpg"
+         data-about="Twelve years after saving his daughter Arya from a dark force, Atharva learns it never left her. When strange events begin again, he must fight to save her once more.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4zLzEwICA4LjVLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00430860-dqffzcxnxr-portrait.jpg" alt="Vash Leval 2">
+      <h3>Vash Leval 2</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Lokah"
+         data-rating="4.2"
+         data-language="Hindi/Tamil"
+         data-duration="2h 31m"
+         data-genre="Action/comedy/Thriller"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICAxMTQuOEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00456016-vdyyatbyrq-portrait.jpg"
+         data-about="Extraordinary events unfold when an aimless trio of friends encounter their new neighbour - a mysterious young woman with a haunting past. A darkly comic fantasy thriller set in a modern-day metropolitan city, this is the first instalment of a franchise that introduces a shadow world that exists alongside our own.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICAxMTQuOEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00456016-vdyyatbyrq-portrait.jpg" alt="Lokah">
+      <h3>Lokah</h3>
+    </div>
+
+    <div class="movie-card"
+         data-name="Baaghi 4"
+         data-rating="4.2"
+         data-language="Hindi"
+         data-duration="2h 37m"
+         data-genre="Action/Thriller"
+         data-poster="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny43LzEwICAxOEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00420244-fyxzdruzuq-portrait.jpg"
+         data-about="A darker spirit, a bloodier mission. This time he is not the same!.">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny43LzEwICAxOEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00420244-fyxzdruzuq-portrait.jpg" alt="Baaghi 4">
+      <h3>Baaghi 4</h3>
+    </div>
+
+  </section>
+
+  <!-- Movie Details Popup (optional modal if you want on same page) -->
+  <div id="movie-details" class="movie-details">
+    <div class="details-content">
+      <span class="close">&times;</span>
+      <h2 id="movie-name"></h2>
+      <p><strong>Rating:</strong> <span id="movie-rating"></span> ⭐</p>
+      <button id="rate-now">Rate Now</button>
+      <p><strong>Language:</strong> <span id="movie-language"></span></p>
+      <p><strong>Duration:</strong> <span id="movie-duration"></span></p>
+      <p><strong>Genre:</strong> <span id="movie-genre"></span></p>
+      <button id="book-ticket">🎟️ Book Ticket</button>
+      <h3>About the Movie</h3>
+      <p id="movie-about"></p>
+    </div>
+  </div>
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeLoginModal()">&times;</span>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="phoneLogin">Phone Number:</label><br>
+      <input type="text" id="phoneLogin" name="phoneLogin" required placeholder="Enter phone number"><br><br>
+      <label for="passwordLogin">Password:</label><br>
+      <input type="password" id="passwordLogin" name="passwordLogin" required placeholder="Enter password"><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signUpModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeSignUpModal()">&times;</span>
+    <h2>Sign Up</h2>
+    <form id="signUpForm">
+      <label for="phoneSignUp">Phone Number:</label><br>
+      <input type="text" id="phoneSignUp" name="phoneSignUp" required placeholder="Enter phone number"><br><br>
+      <label for="passwordSignUp">Password:</label><br>
+      <input type="password" id="passwordSignUp" name="passwordSignUp" required placeholder="Enter password"><br><br>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+<script>// Add click event on movie cards
+document.querySelectorAll(".movie-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const movieData = {
+      name: card.dataset.name,
+      rating: card.dataset.rating,
+      language: card.dataset.language,
+      duration: card.dataset.duration,
+      genre: card.dataset.genre,
+      about: card.dataset.about,
+      poster: card.dataset.poster
+    };
+
+    localStorage.setItem("selectedMovie", JSON.stringify(movieData));
+    window.location.href = "movie.html"; // redirect to movie details page
+  });
+});
+// Get modal elements
+const loginModal = document.getElementById('loginModal');
+const signUpModal = document.getElementById('signUpModal');
+
+// Show modals
+function showLoginModal() {
+  loginModal.style.display = 'flex';
+}
+function showSignUpModal() {
+  signUpModal.style.display = 'flex';
+}
+
+// Close modals
+function closeLoginModal() {
+  loginModal.style.display = 'none';
+}
+function closeSignUpModal() {
+  signUpModal.style.display = 'none';
+}
+
+// Close modal if clicked outside modal content
+window.onclick = function(event) {
+  if (event.target === loginModal) {
+    closeLoginModal();
+  } else if (event.target === signUpModal) {
+    closeSignUpModal();
+  }
+}
+
+// Form submit handlers (demo)
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Login submitted with Phone: ' + this.phoneLogin.value);
+  closeLoginModal();
+});
+
+document.getElementById('signUpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Sign Up submitted with Phone: ' + this.phoneSignUp.value);
+  closeSignUpModal();
+});
+
+</script>
+
+</body>
+</html>

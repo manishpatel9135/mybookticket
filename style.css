@@ -1,0 +1,492 @@
+/* ========== Base Styles ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f0a0a;
+  color: rgb(229, 221, 215);
+  padding-top: 60px; /* navbar space */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1c1c1c;
+  padding: 12px 21px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.city-select select {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 100px;
+  font-size: 16px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 5px;
+  
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width:300px;
+  font-size: 20px;
+}
+
+.search-bar button {
+  padding: 10px 15px;
+  background: #e50914;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  background: #b20710;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #e50914;
+}
+
+
+/* ========== Slider ========== */
+.slider {
+  position: relative;
+  max-width: 80%;
+  height: 400px;
+  margin: 40px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #e50914;
+}
+
+/* ========== Movies Section ========== */
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.movie-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.movie-card img {
+  width: 240px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* ========== Popup (Movie Details) ========== */
+.movie-details {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.details-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  position: relative;
+  color: black;
+  animation: popupScale 0.3s ease;
+}
+
+.details-content h2 {
+  margin-top: 0;
+  color: #987862;
+}
+
+.details-content button {
+  margin: 10px 5px 0 0;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: crimson;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.details-content button:hover {
+  background: darkred;
+}
+
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes popupScale {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ========== Movie Detail Hero Section ========== */
+.movie-detail-hero {
+  display: flex;
+  gap: 30px;
+  background: #1c1c1c;
+  color: white;
+  padding: 40px;
+  margin-top: 60px; /* navbar ke niche space */
+}
+
+.poster {
+  position: relative;
+  flex: 1;
+  max-width: 250px;
+}
+
+.poster img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.poster .in-cinema {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.details {
+  flex: 2;
+}
+
+.details h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.rating-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #2c2c2c;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.rating-box .star {
+  color: #e50914;
+  font-size: 20px;
+}
+
+.rate-btn {
+  padding: 5px 12px;
+  border: none;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tags span,
+.languages span {
+  display: inline-block;
+  background: #2c2c2c;
+  padding: 5px 12px;
+  margin: 5px 5px 5px 0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.meta {
+  margin: 15px 0;
+  color: #bbb;
+}
+
+.book-btn {
+  padding: 12px 20px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #b20710;
+}
+
+/* ========== About Section ========== */
+.about-movie {
+  background: #fff;
+  color: #000;
+  padding: 40px;
+}
+
+.about-movie h2 {
+  margin-bottom: 15px;
+}
+
+.about-movie p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .slider {
+    max-width: 95%;
+    height: 250px;
+  }
+
+  .movie-card img {
+    width: 150px;
+  }
+
+  .details-content {
+    width: 90%;
+  }
+
+  .movie-detail-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .poster {
+    max-width: 200px;
+  }
+
+  .details {
+    flex: 1;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 60%;          /* ek slide ki width */
+  margin: 0 10px;          /* side gap for partial view */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.slide.active {
+  transform: scale(1);     /* center slide bada */
+  opacity: 1;              /* fully visible */
+}
+
+.slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Only targets modal background */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Only modal box */
+.modal-content {
+  background: #1c1c1c;
+  color: rgb(229, 221, 215);
+  padding: 30px 35px;
+  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Only modal close */
+.modal-content .close {
+  position: absolute;
+  top: 12px; right: 18px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #e50914;
+  transition: color 0.3s;
+}
+.modal-content .close:hover {
+  color: #b20710;
+}
+
+/* Only input fields inside modal */
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  background: #2c2c2c;
+  color: rgb(229, 221, 215);
+}
+
+/* Only modal form buttons */
+.modal-content button[type="submit"] {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  background: #e50914;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+}
+.modal-content button[type="submit"]:hover {
+  background: #b20710;
+}

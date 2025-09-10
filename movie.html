@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🎬 MYSHOW</div>
+  </header>
+
+  <!-- Movie Details Section -->
+  <section class="movie-detail-hero">
+    <div class="poster">
+      <img id="movie-poster" src="image/" alt="Movie Poster">
+      <span class="in-cinema">In cinemas</span>
+    </div>
+
+    <div class="details">
+      <h1 id="movie-name"></h1>
+      <div class="rating-box">
+        <span class="star">⭐</span>
+        <span id="movie-rating"></span>
+        <button class="rate-btn">Rate now</button>
+      </div>
+
+      <p class="meta" id="movie-meta"></p>
+
+      <button class="book-btn" id="bookBtn">
+  🎟️ Book tickets
+</button>
+
+    </div>
+  </section>
+
+  <!-- About Movie -->
+  <section class="about-movie">
+    <h2>About the movie</h2>
+    <p id="movie-about"></p>
+  </section>
+
+  <script>
+  // Movie detail page par selectedMovie already localStorage me hoga
+  const movieData = JSON.parse(localStorage.getItem("selectedMovie"));
+
+  if (movieData) {
+    document.getElementById("movie-poster").src = movieData.poster;
+    document.getElementById("movie-name").textContent = movieData.name;
+    document.getElementById("movie-rating").textContent = movieData.rating;
+    document.getElementById("movie-meta").textContent =
+      `${movieData.duration} • ${movieData.genre} • ${movieData.language} • ${movieData.certificate}`;
+    document.getElementById("movie-about").textContent = movieData.about;
+  }
+
+  // ✅ Book Ticket par click karne par movie data ko bookingMovie naam se save karo
+  document.getElementById("bookBtn").addEventListener("click", () => {
+    localStorage.setItem("bookingMovie", JSON.stringify(movieData));
+    window.location.href = "booking.html"; // redirect to booking page
+  });
+</script>
+
+</body>
+</html>
