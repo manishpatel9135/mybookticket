@@ -490,3 +490,89 @@ a {
 .modal-content button[type="submit"]:hover {
   background: #b20710;
 }
+/* ========== Extra Responsive Fixes ========== */
+@media (max-width: 600px) {
+  /* Navbar stacking */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .city-select select {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  /* Search bar full width */
+  .search-bar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .search-bar button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Movie cards resize */
+  .movie-card img {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .movie-card h3 {
+    font-size: 14px;
+  }
+
+  /* Slider smaller */
+  .slider {
+    max-width: 100%;
+    height: 200px;
+  }
+
+  .slide img {
+    height: 200px;
+  }
+
+  /* Movie detail hero section */
+  .movie-detail-hero {
+    padding: 20px;
+  }
+
+  .details h1 {
+    font-size: 22px;
+  }
+
+  .rating-box {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  /* Modal full width */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .modal-content input {
+    font-size: 16px;
+  }
+
+  .modal-content button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
