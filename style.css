@@ -490,62 +490,24 @@ a {
 .modal-content button[type="submit"]:hover {
   background: #b20710;
 }
-/* Mobile responsive fix */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    height: auto;   /* fixed height hatao */
     padding: 10px;
   }
 
-  .logo {
-    text-align: center;
-    font-size: 20px;
-    width: 100%;
-  }
-
-  .city-select {
-    width: 100%;
-  }
-
-  .city-select select {
-    width: 100%;
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .search-bar input {
-    width: 100%;
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .search-bar button {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px;
+  body {
+    padding-top: 180px;  /* zyada space taaki slider neeche aaye */
   }
 
   .nav-links {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 20px;
-  }
-}
-@media (max-width: 600px) {
-  .nav-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;   /* Login aur Signup ke beech space */
-    margin-top: 5px;
+    gap: 30px;
+    margin-top: 8px;
   }
 
   .nav-links a {
